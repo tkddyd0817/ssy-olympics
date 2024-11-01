@@ -8,6 +8,7 @@ import MedalForm from './components/MedalForm'
 
 
 
+
 function App() {
   const [country,setcountry] = useState("")
   const [gold,setgold] = useState(0)
@@ -90,31 +91,6 @@ console.log(result);
         update={update}
         />
 
-        {/* <form className='input-group' onSubmit={handleSubmit}>
-          <div className='input-field'>
-            <label>국가명</label>
-            <input type="text" placeholder='국가를 입력하세요'  onChange={handleNationChange}/>
-          </div>
-        <div className='input-field'>
-          <label>금메달</label>
-          <input type="number" placeholder='0'  onChange={handleGoldChange} />
-        </div>
-
-        <div className='input-field'>
-          <label>은메달</label>
-          <input type="number" placeholder='0'   onChange={handleSilverChange}/>
-        </div>
-
-        <div className='input-field'>
-          <label>동메달</label>
-          <input type="number" placeholder='0'  onChange={handleBronzeChange} />
-        </div>
-        
-        <div className='button-group'>
-          <button type='submit'>국가 추가</button>
-          <button type="button" onClick={update}>업데이트</button>
-        </div>
-        </form> */}
         
         <MedalItem
         medals={medals}

@@ -95,36 +95,33 @@ button{
 }
 
 .rank-text{
-  text-align: center;
-  background-color: grey;
   display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    width: 100%;
-    border: 1px solid black;
-    background-color: #e6e6fa;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 8px;
+    align-items: flex-end;
     border-radius: 8px;
-    overflow: hidden;
 }
 
-
-th{
+table{
+  width:100%
+  
+}
+thead{
   background-color: navy;
-  color: #fff;
-  font-weight: 700;
-  display: table-header-group;
-    vertical-align: middle;
-    unicode-bidi: isolate;
-    border-color: inherit;
-    max-width: 1000px
+  color: white;
+  width:100%;
+  
 }
 
 tbody{
   background-color: grey;
-  display: table-header-group;
-    vertical-align: middle;
-    unicode-bidi: isolate;
-    border-color: inherit;
-    max-width: 1000px
+  width:20%;
+  
 }
 
+
+th{
+  flex: 0 1 auto;
+  max-width: 150;
+}
