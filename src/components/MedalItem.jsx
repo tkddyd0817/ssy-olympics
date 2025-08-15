@@ -1,8 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteMedals } from "../redux/MedalsSlice";
 
 function MedalItem() {
+  const dispatch = useDispatch();
   const medals = useSelector((state) => state.medals.medals);
-  
+
+  const handleDelete = (id) => {
+    dispatch(deleteMedals(id));
+    alert("삭제완료");
+    return;
+  };
+
   return (
     <>
       <div className="rank-text">
@@ -24,31 +32,21 @@ function MedalItem() {
               )
               .map((medal) => (
                 <tr key={medal.id}>
-                  <td>국가명: {medal.country}</td>
-                  <td>금메달: {medal.gold}</td>
-                  <td>은메달: {medal.silver}</td>
-                  <td>동메달: {medal.bronze}</td>
+                  <td>{medal.country}</td>
+                  <td>{medal.gold}</td>
+                  <td>{medal.silver}</td>
+                  <td>{medal.bronze}</td>
                   <td>
-                    <button type="submit" className="remove-button">
+                    <button
+                      type="button"
+                      className="remove-button"
+                      onClick={() => handleDelete(medal.id)}
+                    >
                       삭제
                     </button>
                   </td>
                 </tr>
               ))}
-
-            {/* {props.medals.sort((a, b) => b.gold - a.gold).map((medal) => {
-                            return (
-                                <tr>
-                                    <td>{medal.country}</td>
-                                    <td>{medal.gold}</td>
-                                    <td>{medal.silver}</td>
-                                    <td>{medal.bronze}</td>
-                                    <td>
-                                        <button type='submit' className='remove-button' onClick={() => props.remove(medal.country)} >삭제</button>
-                                    </td>
-                                </tr>
-                            )
-                        })} */}
           </tbody>
         </table>
       </div>
