@@ -4,7 +4,7 @@ import "./App.css";
 import MedalItem from "./components/MedalItem";
 import MedalForm from "./components/MedalForm";
 import logolmage from "../public/images.png";
-
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <div id="root">
@@ -15,9 +15,9 @@ function App() {
       <div className="Main-Container">
         <h1>파리 올림픽</h1>
         <MedalForm />
-
         <MedalItem />
       </div>
+      <ToastContainer />
     </div>
   );
 }

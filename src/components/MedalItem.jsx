@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteMedals } from "../redux/MedalsSlice";
+import { toast } from "react-toastify";
 
 function MedalItem() {
   const dispatch = useDispatch();
@@ -7,7 +8,7 @@ function MedalItem() {
 
   const handleDelete = (id) => {
     dispatch(deleteMedals(id));
-    alert("삭제완료");
+    toast.success("삭제완료");
     return;
   };
 

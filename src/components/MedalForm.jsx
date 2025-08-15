@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addMedals, updateMedals } from "../redux/MedalsSlice";
+import { toast } from "react-toastify";
 
 function MedalForm() {
   const dispatch = useDispatch();
@@ -34,11 +35,11 @@ function MedalForm() {
           medal.country.trim().toLowerCase() === country.trim().toLowerCase()
       )
     ) {
-      alert("중복돤 국가입니다.");
+      toast.error("중복돤 국가입니다.");
       return;
     }
     dispatch(addMedals(newMedal));
-    alert("국가 가 등록되었습니다.");
+    toast.success("국가 가 등록되었습니다.");
     resetForm();
     return;
   };
@@ -55,11 +56,11 @@ function MedalForm() {
         bronze: Number(bronze),
       };
       dispatch(updateMedals(currentMedalData));
-      alert("업데이트 완료");
+      toast.success("업데이트 완료");
       resetForm();
       return;
     } else {
-      alert("업데이트 실패");
+      toast.error("업데이트 실패");
       return;
     }
   };
